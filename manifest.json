@@ -13,9 +13,18 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "タマザラシの雨"
+    "default_title": "タマザラシの雨",
+    "default_icon": {
+      "16": "spheal.png",
+      "48": "spheal.png",
+      "128": "spheal.png"
+    }
   },
-  "icons": {},
+  "icons": {
+    "16": "spheal.png",
+    "48": "spheal.png",
+    "128": "spheal.png"
+  },
   "web_accessible_resources": [
     {
       "resources": ["spheal.png"],
