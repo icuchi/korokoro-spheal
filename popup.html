@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>タマザラシの雨</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 220px;
+      padding: 20px 16px;
+      font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: #e8f4fd;
+      color: #1a3a5c;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .header img {
+      width: 72px;
+      height: 72px;
+      image-rendering: pixelated;
+    }
+
+    .header h1 {
+      font-size: 14px;
+      margin-top: 4px;
+      color: #1a3a5c;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .toggle-label {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input { display: none; }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #ccc;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.25s;
+    }
+
+    input:checked + .slider { background: #4a9ede; }
+    input:checked + .slider::before { transform: translateX(20px); }
+
+    .status {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png"
+      alt="タマザラシ"
+    />
+    <h1>タマザラシの雨</h1>
+  </div>
+
+  <div class="toggle-row">
+    <span class="toggle-label">コロコロする</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <p class="status" id="status">読み込み中…</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

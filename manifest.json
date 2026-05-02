@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "タマザラシの雨",
+  "version": "1.0",
+  "description": "タマザラシがコロコロ降ってくるだけ",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["spheal-main.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "タマザラシの雨"
+  },
+  "icons": {},
+  "web_accessible_resources": [
+    {
+      "resources": ["spheal.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
